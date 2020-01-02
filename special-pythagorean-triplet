@@ -1,0 +1,33 @@
+
+#1st Approach ( Complexity Higher than the second approach)
+n=1000
+b=0
+c=0
+
+for a in range(1,(n//3)):
+
+    # This equation is obtained by solving equations a+b+c=n and a^2 + b^2 = c^2
+    b=(a*a - (a-n)*(a-n))//(2*(a-n))
+    
+    c=n-a-b
+    
+    if a*a + b*b == c*c :
+        print(f"a = {a}, b = {b}, c = {c}, abc = {a*b*c}")
+        break
+
+#2nd Approach (Too Less Time Complexity)
+#Euclid's Approach
+#a= 2mn; b= m^2 -n^2; c= m^2 + n^2;
+#a + b + c = 1000;
+#2mn + (m^2 -n^2) + (m^2 + n^2) = 1000;
+#2mn + 2m^2 = 1000
+#m(n+m) = 500
+#n = 500/m - m
+#Since m>n, so for m=n we get,
+#m > 16 > sqrt(250)
+# And m>0 so for n=0 we get,
+#m < sqrt(500) < 23
+#So the value of m lies between 16 and 23 and the number that divides 500 completely should either be a combination of few or whole of :
+# {2,2,5,5,5} . The only number that we get is 20. 
+# So we get m = 20 and n = 5 and the respective values of a,b,c are a = 200, b = 375 and c = 425 which alogether sums to 1000.
+# The product is = 31875000
